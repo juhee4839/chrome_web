@@ -1,23 +1,25 @@
 
+
 const API_KEY = "9662afba7a4f94878e3d46a047c168d7";
 
 function onGeoOk(position){
+
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`; 
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
         const weather = document.querySelector("#weather span:first-child");
         const city = document.querySelector("#weather span:last-child");
         city.innerText = data.name;
-        weather.innerText = `${data.weather[0].main}` / `${data.main.temp}`
+        weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
     });
-    }
-
-function onGeoError() {
-    alert("Can't find you. No weather for you");
 }
 
+function onGeoError(){
+    alert("Can't find you. No weather for you")
+}
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError );
 
-navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+//https://api.openweathermap.org/data/2.5/weather?lat=37.348966399999995&lon=126.81871359999998&appid=9662afba7a4f94878e3d46a047c168d7$units=metric
