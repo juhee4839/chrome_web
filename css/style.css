@@ -9,10 +9,12 @@ body {
 
 section {
   width: 1000px;
+  min-width:1000px;
   position: absolute;
   z-index: 1;
   color: white;
-  transform: translate(50%);
+  transform: translateX(-50%);
+  left:50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,12 +40,18 @@ img {
 #login-form > input {
   width: 300px;
   height: 35px;
+  border-radius: 3px;
   padding: 0px 30px;
   box-sizing: border-box;
   border: 1px solid #0f4989;
   outline: none;
   margin-right: 10px;
 }
+
+#login-form > input::placeholder{
+  color:#0f4989;
+}
+
 
 #login-form > button {
   width: 100px;
@@ -52,16 +60,50 @@ img {
   color: white;
   font-size: 14px;
   border: 1px solid #0f4989;
+  border-radius: 3px;
   outline: none;
 }
 
+#todo-form{
+  margin-top:50px;
+}
+
 #todo-form > input {
-  width: 200px;
+  width: 400px;
   height: 35px;
   background-color: transparent;
   border: none;
   outline: none;
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid rgb(255, 255, 255,0.5);
+  text-align: center;
+  color:white;
+}
+
+#todo-form > input::placeholder{
+  color:#fff;
+  font-size:15px;
+  font-weight: thin;
+  font-family: "Open Sans";
+}
+
+#todo-list > li{
+  text-align: left;
+  font-size:16px;
+  font-weight: bold;
+}
+
+#todo-list > li > button{
+  width:20px;
+  height: 20px;
+  padding:2px;
+  box-sizing: border-box;
+  border-radius: 1px;
+  background-color:rgba(255, 255, 255, 0.8);
+  color:rgba(15,73,137,0.9);
+  border:none;
+  outline:none;
+  margin-left:10px;
+  text-align:center
 }
 
 #quote {
@@ -74,4 +116,19 @@ img {
 #quote span:last-child {
   font-size: 15px;
   margin-top: 5px;
+}
+
+
+
+/*weather*/
+
+#weather{
+  width:150px;
+  height:25px;
+  border-radius: 10px;
+  background-color: rgba(15,73,137,0.4);
+  position:absolute;
+  top:50px;
+  right:20px;
+
 }
